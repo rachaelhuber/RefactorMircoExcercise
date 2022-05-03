@@ -1,5 +1,4 @@
-﻿using System;
-namespace TDDMicroExercises.TirePressureMonitoringSystem.SomeDependencies
+﻿namespace TDDMicroExercises.TirePressureMonitoringSystem.SomeDependencies
 {
     public class AnAlarmClient3
     {

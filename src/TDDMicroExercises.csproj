@@ -41,9 +41,6 @@
   <ItemGroup>
     <Compile Include="TelemetrySystem\TelemetryClient.cs" />
     <Compile Include="TelemetrySystem\TelemetryDiagnosticControls.cs" />
-    <Compile Include="TirePressureMonitoringSystem\Alarm.cs" />
-    <Compile Include="TirePressureMonitoringSystem\ISensor.cs" />
-    <Compile Include="TirePressureMonitoringSystem\Sensor.cs" />
     <Compile Include="TurnTicketDispenser\TicketDispenser.cs" />
     <Compile Include="TurnTicketDispenser\TurnNumberSequence.cs" />
     <Compile Include="TurnTicketDispenser\TurnTicket.cs" />
@@ -64,7 +61,15 @@
     <Compile Include="TelemetrySystem.SomeDependencies\TelemetryDiagnosticControlsClient2.cs" />
     <Compile Include="TelemetrySystem.SomeDependencies\TelemetryDiagnosticControlsClient3.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="TirePressureMonitoringSystem\TirePressureMonitoringSystem.csproj">
+      <Project>{df5e2bc3-873b-4908-8195-6a6c9840be35}</Project>
+      <Name>TirePressureMonitoringSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
