@@ -36,14 +36,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Web" />
-    <Reference Include="nunit.framework">
-      <HintPath>lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TelemetrySystem\TelemetryClient.cs" />
-    <Compile Include="TelemetrySystem.Tests\TelemetryDiagnosticControlsTest.cs" />
     <Compile Include="TelemetrySystem\TelemetryDiagnosticControls.cs" />
     <Compile Include="TirePressureMonitoringSystem\Alarm.cs" />
     <Compile Include="TirePressureMonitoringSystem\Sensor.cs" />
@@ -67,16 +63,7 @@
     <Compile Include="TelemetrySystem.SomeDependencies\TelemetryDiagnosticControlsClient2.cs" />
     <Compile Include="TelemetrySystem.SomeDependencies\TelemetryDiagnosticControlsClient3.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TirePressureMonitoringSystem.SomeDependencies\" />
-    <Folder Include="UnicodeFileToHtmlTextConverter.SomeDependencies\" />
-    <Folder Include="TurnTicketDispenser.SomeDependencies\" />
-    <Folder Include="TelemetrySystem.SomeDependencies\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="lib\nunit.framework.dll" />
-    <None Include="lib\nunit.framework.xml" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
