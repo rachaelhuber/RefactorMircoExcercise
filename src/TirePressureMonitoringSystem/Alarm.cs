@@ -2,6 +2,7 @@ namespace TDDMicroExercises.TirePressureMonitoringSystem
 {
     public class Alarm
     {
+        // TODO (Rach): Could be moved to config if different settings were required for different vehicles 
         private const double LowPressureThreshold = 17;
         private const double HighPressureThreshold = 21;
 

@@ -6,28 +6,22 @@
 
     public class AlarmTests
     {
-        [Fact]
-        public async Task alarm_on()
+        [Theory]
+        [InlineData(-1, true)]
+        [InlineData(16.999999, true)]
+        [InlineData(17, false)] // low_threshold
+        [InlineData(20, false)]
+        [InlineData(21, false)] // high_threshold
+        [InlineData(21.000001, true)]
+        public async Task should_return_correct_state(double sensorValue, bool expected)
         {
             var testSensor = new TestSensor();
             var alarm = new Alarm(testSensor);
             
-            testSensor.SetSensorValue(16.999999);
+            testSensor.SetSensorValue(sensorValue);
             alarm.Check();
             
-            alarm.AlarmOn.ShouldBeTrue();
-        }
-
-        [Fact]
-        public async Task alarm_off()
-        {
-            var testSensor = new TestSensor();
-            var alarm = new Alarm(testSensor);
-
-            testSensor.SetSensorValue(20);
-            alarm.Check();
-
-            alarm.AlarmOn.ShouldBeFalse();
+            alarm.AlarmOn.ShouldBe(expected);
         }
 
         private class TestSensor : ISensor
